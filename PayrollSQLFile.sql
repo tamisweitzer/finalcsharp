@@ -1,0 +1,17 @@
+
+IF EXISTS(SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Payroll')
+	DROP TABLE Payroll;
+	CREATE TABLE Payroll
+	(
+		ID int NOT NULL PRIMARY KEY,
+		EmployeeID int NOT NULL,
+		CheckNumber int NOT NULL,
+		PayrollDate date,
+		CheckAmount decimal(7, 2),
+		HoursWorked decimal(5, 2)
+	);
+
+	INSERT INTO Payroll VALUES (1, 1123, 23582, '2014-02-02', 877.81,  40.0);
+	INSERT INTO Payroll VALUES (2, 1124, 23583, '2014-02-02', 776.23,  40.5);
+	INSERT INTO Payroll VALUES (3, 1125, 23587, '2014-02-03', 1211.41,  46.0);
+GO
